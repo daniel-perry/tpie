@@ -598,7 +598,8 @@ public:
 			log_debug() << "Decreasing run length from " << p.runLength
 				<< " to " << n << std::endl;
 
-			p.runLength = n;
+			// Since n < runLength, we may downcast to a smaller type.
+			p.runLength = static_cast<memory_size_type>(n);
 
 			// Mirror the restriction from calculate_parameters.
 			if (p.internalReportThreshold > p.runLength)
