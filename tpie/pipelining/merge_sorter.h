@@ -63,7 +63,7 @@ public:
 	/// \brief  Enable setting run length and fanout manually (for testing
 	/// purposes).
 	///////////////////////////////////////////////////////////////////////////
-	inline void set_parameters(stream_size_type runLength, memory_size_type fanout) {
+	inline void set_parameters(memory_size_type runLength, memory_size_type fanout) {
 		tp_assert(m_state == stParameters, "Merge sorting already begun");
 		p.runLength = p.internalReportThreshold = runLength;
 		p.fanout = p.finalFanout = fanout;
