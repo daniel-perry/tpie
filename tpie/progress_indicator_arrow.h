@@ -83,8 +83,8 @@ namespace tpie {
 		//std::cout << "refresh " << m_description << std::endl;
 
 		memory_size_type l = m_indicatorLength - 12  - m_title.size();
-		memory_size_type progress = (m_range) ?
-			l * (m_current)/(m_range) : 0;
+		memory_size_type progress = (m_range != 0) ?
+			static_cast<memory_size_type>(l * m_current / m_range) : 0;
 
 		std::string newStatus;
 		{
